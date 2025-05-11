@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Import Pages
 import HomePage from "./pages/HomePage/HomePage";
 import Destination from "./pages/Destinations/Destinations";
+import DestinationItem from "./pages/DestionationItem/DestinationItem";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/destinations" element={<Destination />} />
+        <Route path="/:id" element={<DestinationItem />} />
         {/* <Route path="*" element={<NoFound />} /> */}
       </Routes>
     </div>
