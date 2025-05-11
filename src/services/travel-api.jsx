@@ -9,3 +9,10 @@ export const getTrips = async () => {
   const response = await axios.get(URL);
   return response;
 };
+
+// Show one Trip
+export const getTrip = async (id) => {
+  const URL = `${baseURL}/trips/${id}`;
+  const response = await axios.get(URL);
+  return response;
+};
