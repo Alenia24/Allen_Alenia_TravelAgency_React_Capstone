@@ -16,3 +16,10 @@ export const getTrip = async (id) => {
   const response = await axios.get(URL);
   return response;
 };
+
+// Get reviews for a trip by id
+export const getTripReviews = async (id) => {
+  const URL = `${baseURL}/reviews/${id}`;
+  const response = await axios.get(URL);
+  return response;
+};
