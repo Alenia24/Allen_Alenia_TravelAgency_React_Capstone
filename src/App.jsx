@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Import Pages
 import HomePage from "./pages/HomePage/HomePage";
-import Destination from "./pages/Destinations/Destination";
+import Destination from "./pages/Destinations/Destinations";
 
 function App() {
   return (
