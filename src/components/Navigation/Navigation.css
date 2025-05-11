@@ -1,0 +1,16 @@
+.message {
+    background-color: #385450;
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.message p {
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+}
+
+.message span {
+    font-weight: bold;
+}
