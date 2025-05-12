@@ -18,6 +18,7 @@ function App() {
         <Route path="/destinations/:id" element={<DestinationItem />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/admindashboard" element={<RegisterPage />} />
         {/* <Route path="*" element={<NoFound />} /> */}
       </Routes>
     </div>

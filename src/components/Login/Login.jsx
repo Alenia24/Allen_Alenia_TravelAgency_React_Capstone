@@ -11,7 +11,14 @@ export default function Register() {
       password: e.target.username.value,
     };
 
-    postLogin(loginData)
+    postLogin(loginData).then ((user) => {
+        if(user.role ==="admin") {
+          nav("/admindashoard")  
+        } else {
+            nav("/restricted")
+        }
+        
+    })
   };
 
   return (
