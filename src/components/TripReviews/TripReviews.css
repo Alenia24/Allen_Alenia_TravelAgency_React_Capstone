@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-transform: capitalize;
 }
 
 .reviews-container {
@@ -13,9 +14,18 @@
 
 .review-card {
   width: 300px;
-  margin-top: 20px;
+  margin: 20px;
+
+}
+
+.review-rating {
+    color: #385450;
 }
 
 .review-card p {
   margin: 0;
+}
+
+.review-card strong {
+    color: #385450;
 }
