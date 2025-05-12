@@ -30,3 +30,10 @@ export const postTripReview = async (tripId, review) => {
   const response = await axios.post(URL, review);
   return response;
 };
+
+// Post a login
+export const postLogin = async (loginData) => {
+  const URL = `${baseURL}/auth/login`;
+  const response = await axios.post(URL, loginData);
+  return response;
+};
