@@ -1,0 +1,45 @@
+.post-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 0;
+}
+
+.post-review form {
+  max-width: 600px;
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
+}
+
+.post-review label {
+  font-weight: bold;
+  color: #385450;
+  align-self: flex-start;
+}
+
+.post-review input[type="text"],
+.post-review input[type="number"] {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.post-review button {
+    margin-top: 20px;
+    border: 1px solid #385450;
+    border-radius: 6px;
+    padding: 10px 30px;
+    background-color: #385450;
+    color: white;
+    transition: 200ms all ease-in-out;
+}
+
+.post-review button:hover {
+    border: 1px solid #385450;
+    opacity: 0.8;
+}

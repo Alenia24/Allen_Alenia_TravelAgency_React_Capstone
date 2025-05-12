@@ -23,3 +23,10 @@ export const getTripReviews = async (id) => {
   const response = await axios.get(URL);
   return response;
 };
+
+// Post a review
+export const postTripReview = async (tripId, review) => {
+  const URL = `${baseURL}/reviews/${tripId}`;
+  const response = await axios.post(URL, review);
+  return response;
+};

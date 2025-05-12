@@ -4,6 +4,14 @@ import "./TripReviews.css";
 import { renderStars } from "../../services/renderStars";
 
 export default function TripReviews({ reviews }) {
+    if(!Array.isArray(reviews)) {
+        return ( <div className="Reviews">
+            <h2 className="review-heading">Reviews</h2>
+            <div className="reviews-container">
+              <p>No Reviews Available. Be the First to Add a Review.</p>
+            </div>
+          </div>) 
+    }
   return (
     <div className="Reviews">
       <h2 className="review-heading">Reviews</h2>
