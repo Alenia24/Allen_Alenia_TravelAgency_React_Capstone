@@ -37,3 +37,10 @@ export const postLogin = async (loginData) => {
   const response = await axios.post(URL, loginData);
   return response;
 };
+
+// Post a register
+export const postRegister = async (registerData) => {
+  const URL = `${baseURL}/auth/register`;
+  const response = await axios.post(URL, registerData);
+  return response;
+};
