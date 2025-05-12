@@ -18,14 +18,14 @@ export default function Navigation() {
 
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container fluid className="mx-3 p-0">
-          <Navbar.Brand href="#home">
+          <Nav.Link as={Link} to={"/"}>
             <img
               src="../../src/assets/logo.png"
               alt=""
               width={100}
               height={50}
             />
-          </Navbar.Brand>
+          </Nav.Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
