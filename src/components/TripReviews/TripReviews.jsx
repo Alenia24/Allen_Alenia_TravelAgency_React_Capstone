@@ -11,11 +11,13 @@ export default function TripReviews({ reviews }) {
         {reviews.map((review) => {
           return (
             <div className="review-card">
-              <p>
-                <strong>{review.name}</strong>
-              </p>
+              
               <p className="review-rating">{renderStars(review.rating)}</p>
               <p>{review.review}</p>
+              <p className="review-name">
+                <strong>{review.name}</strong>
+              </p>
+              <p>{(review.createdAt).split("T")[0]}</p>
             </div>
           );
         })}

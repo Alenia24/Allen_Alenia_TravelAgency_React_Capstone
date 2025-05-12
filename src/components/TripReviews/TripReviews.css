@@ -29,3 +29,7 @@
 .review-card strong {
     color: #385450;
 }
+
+.review-name {
+    padding-top: 10px;
+}
