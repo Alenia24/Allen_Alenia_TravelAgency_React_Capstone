@@ -1,0 +1,26 @@
+.footer {
+    background-color: #385450;
+    margin-top: 60px;
+    padding-top: 40px;
+    color: white;
+}
+
+.footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.footer h6 {
+    margin-bottom: 30px;
+}
+
+.footer p {
+    margin: 0;
+    font-weight: 100;
+}
+
+.copyright {
+    padding: 35px 0 10px 0;
+    text-align: center;
+}
