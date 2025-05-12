@@ -7,6 +7,7 @@ import TripDetails from '../../components/TripDetails/TripDetails';
 import "./DestinationItem.css"
 import TripReviews from '../../components/TripReviews/TripReviews';
 import PostReview from '../../components/PostReview/PostReview';
+import Footer from '../../components/Footer/Footer';
 
 export default function DestinationItem() {
     const [trip, setTrip] = useState({})
@@ -27,6 +28,7 @@ export default function DestinationItem() {
       <TripDetails trip= {trip} />
       <PostReview id = {id}/>
       <TripReviews reviews = {reviews} />
+      <Footer />
     </div>
   );
 }

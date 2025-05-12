@@ -4,6 +4,7 @@ import { getTrips } from "../../services/travel-api";
 
 import "./Destinations.css";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 
 export default function Destinations() {
   const [trips, setTrips] = useState([]);
@@ -35,6 +36,7 @@ export default function Destinations() {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
