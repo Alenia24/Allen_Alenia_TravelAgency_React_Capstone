@@ -15,7 +15,7 @@ export default function Register() {
         if(user.role ==="admin") {
           nav("/admindashoard")  
         } else {
-            nav("/restricted")
+            nav("/")
         }
         
     })
