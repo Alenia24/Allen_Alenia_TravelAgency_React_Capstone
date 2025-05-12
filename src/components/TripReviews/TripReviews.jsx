@@ -11,8 +11,10 @@ export default function TripReviews({ reviews }) {
         {reviews.map((review) => {
           return (
             <div className="review-card">
+              <p>
+                <strong>{review.name}</strong>
+              </p>
               <p className="review-rating">{renderStars(review.rating)}</p>
-              <p><strong>{review.name}</strong></p>
               <p>{review.review}</p>
             </div>
           );
