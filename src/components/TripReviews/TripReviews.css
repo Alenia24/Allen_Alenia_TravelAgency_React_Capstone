@@ -1,0 +1,21 @@
+.Reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.review-card {
+  width: 300px;
+  margin-top: 20px;
+}
+
+.review-card p {
+  margin: 0;
+}
