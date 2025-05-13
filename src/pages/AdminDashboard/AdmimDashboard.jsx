@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navigation from "../../components/Navigation/Navigation";
 import Footer from "../../components/Footer/Footer";
 import SideNav from "../../components/SideNav/SideNav";
 import AdminBody from "../../components/AdminBody/AdminBody";
 
+
 import "./AdminDashboard.css"
+import { getTrips } from "../../services/travel-api";
 
 export default function AdmimDashboard() {
+  const [trips, setTrips ] = useState([])
+
+   useEffect(() => {
+      getTrips().then((res) => setTrips(res.data));
+    });
   return (
     <div>
       <Navigation />
       <div className="admin-layout">
         <SideNav />
-        <AdminBody />
+        <AdminBody trips = {trips} />
       </div>
       <Footer />
     </div>
