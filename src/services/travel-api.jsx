@@ -51,3 +51,24 @@ export const postLogout = async (logoutData) => {
   const response = await axios.post(URL, logoutData);
   return response;
 };
+
+// Update a trip
+export const updateTrip = async (id, tripData) => {
+  const URL = `${baseURL}/${id}`;
+  const response = await axios.put(URL, tripData);
+  return response;
+};
+
+// Delete a trip 
+export const deleteTrips = async(id) => {
+  const URL = `${baseURL}/${id}`;
+  const response = await axios.delete(URL);
+  return response;
+}
+
+// Create a trip 
+export const createTrips = async (trip) => {
+  const URL = `${baseURL}/trips`;
+  const response = await axios.post(URL, trip);
+  return response;
+};
