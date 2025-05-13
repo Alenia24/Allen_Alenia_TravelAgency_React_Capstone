@@ -44,3 +44,10 @@ export const postRegister = async (registerData) => {
   const response = await axios.post(URL, registerData);
   return response;
 };
+
+// Post a logout
+export const postLogout = async (logoutData) => {
+  const URL = `${baseURL}/auth/logout`;
+  const response = await axios.post(URL, logoutData);
+  return response;
+};
