@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navigation.css";
 
 import Container from "react-bootstrap/Container";
@@ -7,6 +7,14 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 export default function Navigation() {
+  const loggedIn = !!localStorage.getItem("accessToken")
+  const nav = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken")
+    localStorage.removeItem("refreshToken")
+    nav("/")
+  } 
   return (
     <div>
       <div className="message">
@@ -32,7 +40,9 @@ export default function Navigation() {
               <Nav.Link as={Link} to={"/destinations"}>Destinations</Nav.Link>
               <Nav.Link as={Link} to={"/vacation-types"}>Vacation Types</Nav.Link>
               <Nav.Link as={Link} to={"/about-us"}>About Us</Nav.Link>
-              <Nav.Link as={Link} to={"/login"}>Login</Nav.Link>
+              {loggedIn ? (<Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
+              ):
+              (<Nav.Link as={Link} to={"/login"}>Login</Nav.Link>)}
             </Nav>
           </Navbar.Collapse>
         </Container>
