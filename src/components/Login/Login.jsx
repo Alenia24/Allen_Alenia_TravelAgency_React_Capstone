@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { postLogin, postRegister } from "../../services/travel-api";
 
 import "./Login.css";
 
 export default function Register() {
+  const [error, setError] = useState(null);
+
   const nav = useNavigate();
   const createLogin = (e) => {
     e.preventDefault();
@@ -19,8 +21,11 @@ export default function Register() {
       } else {
         nav("/");
       }
+    }).catch((error) => {
+      setError(error.response.data.message)
     });
   };
+
   const handleNavigation = () => {
     nav("/register");
   };
@@ -36,6 +41,7 @@ export default function Register() {
         />
         <h1>Welcome Back!</h1>
         <h2>Login</h2>
+        {error && <div className="message-error-container">{error}</div>}
         <form className="login-form" onSubmit={createLogin} method="post">
           <label htmlFor="username">Username</label>
           <input
@@ -57,7 +63,10 @@ export default function Register() {
           <button type="submit">Log In</button>
         </form>
         <p>
-          Don't have an account. <button className="signup-btn" onClick={handleNavigation}>Sign Up</button>
+          Don't have an account.{" "}
+          <button className="signup-btn" onClick={handleNavigation}>
+            Sign Up
+          </button>
         </p>
       </div>
     </div>
