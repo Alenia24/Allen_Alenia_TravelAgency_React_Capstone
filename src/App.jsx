@@ -9,6 +9,7 @@ import DestinationItem from "./pages/DestionationItem/DestinationItem";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AdminDashboard from "./pages/AdminDashboard/AdmimDashboard";
+import EditDestination from "./pages/EditDestination/EditDestination";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/editDestinations/:id" element={<EditDestination />} />
         {/* <Route path="*" element={<NoFound />} /> */}
       </Routes>
     </div>
