@@ -6,6 +6,21 @@
   margin: 80px 0;
 }
 
+.message-error-container {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.message-error-container{
+    background-color: rgb(243, 5, 5);
+    overflow-wrap: break-word;
+    word-wrap: break-all;
+}
+
 .post-review form {
   max-width: 600px;
   width: 80%;

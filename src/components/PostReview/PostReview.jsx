@@ -1,6 +1,5 @@
 import React from "react";
 import { postTripReview } from "../../services/travel-api";
-import { useParams } from "react-router-dom";
 
 import "./PostReview.css"
 
@@ -9,7 +8,7 @@ export default function PostReview({ id }) {
     e.preventDefault();
     const review = {
       trip: id,
-      name: e.target.name.value,
+      name: e.target.name.value || "Anonymous",
       rating: Number(e.target.rating.value),
       review: e.target.review.value,
     };
@@ -23,7 +22,7 @@ export default function PostReview({ id }) {
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" />
         <label htmlFor="rating">Rating</label>
-        <input type="number" name="rating" id="rating" required/> 
+        <input type="number" name="rating" id="rating" required min={1} max={5}/> 
         <label htmlFor="review">Review</label>
         <input type="text" name="review" id="review" required/>
         
