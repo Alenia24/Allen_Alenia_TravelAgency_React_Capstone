@@ -6,7 +6,12 @@ import "./Destinations.css";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 
-export default function Destinations({trips}) {
+export default function Destinations() {
+  const [trips, setTrips] = useState([]);
+
+  useEffect(() => {
+    getTrips().then((res) => setTrips(res.data));
+  });
   return (
     <div>
       <Navigation />
