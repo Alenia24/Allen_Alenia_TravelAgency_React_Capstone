@@ -11,6 +11,8 @@ export default function Register() {
   const createLogin = (e) => {
     e.preventDefault();
     const loginData = {
+
+      
       username: e.target.username.value,
       password: e.target.password.value,
     };
@@ -18,8 +20,12 @@ export default function Register() {
     // Used previous lab login from javascript to show the div on success and error
     // Additional Resource: https://dev.to/miriamfark/display-backend-errors-to-the-frontend-4hoa
     postLogin(loginData)
-      .then((user) => {
-        if (user.role === "admin") {
+      .then((res) => {
+        localStorage.setItem("accessToken", res.data.accessToken)
+        localStorage.setItem("refreshToken", res.data.refreshToken);
+        const role = res.data.role
+        
+        if (role === "admin") {
           nav("/admindashboard");
         } else {
           nav("/");

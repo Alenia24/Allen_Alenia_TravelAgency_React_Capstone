@@ -10,6 +10,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AdminDashboard from "./pages/AdminDashboard/AdmimDashboard";
 import EditDestination from "./pages/EditDestination/EditDestination";
+import AdminTripDetails from "./components/AdminBody/AdminTripDetails";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/editDestinations/:id" element={<EditDestination />} />
+        <Route path="/admin-trip-details/:id" element={<AdminTripDetails />} />
         {/* <Route path="*" element={<NoFound />} /> */}
       </Routes>
     </div>

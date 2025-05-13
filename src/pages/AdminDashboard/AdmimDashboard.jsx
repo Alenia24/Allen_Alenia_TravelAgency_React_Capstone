@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../../components/Navigation/Navigation";
 import Footer from "../../components/Footer/Footer";
-import SideNav from "../../components/SideNav/SideNav";
 import AdminBody from "../../components/AdminBody/AdminBody";
 
 
@@ -18,7 +17,6 @@ export default function AdmimDashboard() {
     <div>
       <Navigation />
       <div className="admin-layout">
-        <SideNav />
         <AdminBody trips = {trips} />
       </div>
       <Footer />
