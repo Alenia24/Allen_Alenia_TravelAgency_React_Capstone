@@ -15,15 +15,19 @@ export default function Register() {
       password: e.target.password.value,
     };
 
-    postLogin(loginData).then((user) => {
-      if (user.role === "admin") {
-        nav("/admindashboard");
-      } else {
-        nav("/");
-      }
-    }).catch((error) => {
-      setError(error.response.data.message)
-    });
+    // Used previous lab login from javascript to show the div on success and error
+    // Additional Resource: https://dev.to/miriamfark/display-backend-errors-to-the-frontend-4hoa
+    postLogin(loginData)
+      .then((user) => {
+        if (user.role === "admin") {
+          nav("/admindashboard");
+        } else {
+          nav("/");
+        }
+      })
+      .catch((error) => {
+        setError(error.response.data.message);
+      });
   };
 
   const handleNavigation = () => {

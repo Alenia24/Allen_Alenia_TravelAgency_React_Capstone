@@ -18,6 +18,7 @@ export default function Register() {
     };
 
     // Used previous lab login from javascript to show the div on success and error
+    // Additional Resource: https://dev.to/miriamfark/display-backend-errors-to-the-frontend-4hoa
     postRegister(registerData)
       .then(() => {
         setSuccess("Registered Successfully.");
