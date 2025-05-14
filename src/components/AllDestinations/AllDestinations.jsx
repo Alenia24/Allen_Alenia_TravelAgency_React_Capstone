@@ -11,9 +11,9 @@ export default function AllDestinations({ trips }) {
         <div></div>
       </div>
       <div className="all-destinations">
-        {trips.map((trip) => {
+        {trips.map((trip, i) => {
           return (
-            <Link to={`/destinations/${trip._id}`}>
+            <Link to={`/destinations/${trip._id}`} key={i}>
               <div className="all-destinations-card">
                 <div className="all-destinations-image">
                   <img

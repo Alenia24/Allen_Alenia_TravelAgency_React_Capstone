@@ -1,8 +1,12 @@
 import React from 'react'
 
 import "./TripDetails.css"
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function TripDetails({trip}) {
+  const nav = useNavigate();
+  const { id } = useParams();
+
   return (
     <div>
       <div className="trip-container">
@@ -27,7 +31,9 @@ export default function TripDetails({trip}) {
           <p>
             <span>Price:</span> ${trip.price}
           </p>
-          <button className="book-now-btn">Book Now</button>
+          <button onClick={(() => {
+            nav(`/booking/${id}`)
+          })} className="book-now-btn">Book Now</button>
         </div>
       </div>
     </div>

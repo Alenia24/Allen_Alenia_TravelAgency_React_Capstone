@@ -73,7 +73,7 @@ export default function Register() {
           <button type="submit">Log In</button>
         </form>
         <p>
-          Don't have an account.{" "}
+          Don't have an account.
           <button className="signup-btn" onClick={handleNavigation}>
             Sign Up
           </button>

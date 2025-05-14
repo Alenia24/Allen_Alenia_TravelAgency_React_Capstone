@@ -64,14 +64,14 @@ export default function NewDestination() {
           <input type="number" name="duration" id="duration" required />
 
           <label htmlFor="type">Type</label>
-          <select name="type" id="type">
+          <select name="type"  defaultValue="other" id="type">
             <option value="adventure">Adventure</option>
             <option value="cultural">Cultural</option>
             <option value="family">Family</option>
             <option value="romantic">Romantic</option>
             <option value="beach">Beach</option>
             <option value="island">Island</option>
-            <option value="other" selected>
+            <option value="other">
               Other
             </option>
           </select>

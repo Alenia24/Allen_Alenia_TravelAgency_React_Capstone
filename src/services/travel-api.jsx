@@ -54,11 +54,11 @@ export const postLogout = async (logoutData) => {
 
 // Update a trip
 export const updateTrip = async (id, tripData) => {
-  const token = localStorage.getItem("accessToken")
+  const token = localStorage.getItem("accessToken");
   const URL = `${baseURL}/trips/${id}`;
   const response = await axios.put(URL, tripData, {
     headers: {
-      "authorization": `Bearer ${token}`,
+      authorization: `Bearer ${token}`,
       "Content-Type": "multipart/form-data",
     },
   });
@@ -71,7 +71,7 @@ export const deleteTrips = async (id) => {
   const URL = `${baseURL}/trips/${id}`;
   const response = await axios.delete(URL, {
     headers: {
-      "authorization": `Bearer ${token}`,
+      authorization: `Bearer ${token}`,
       "Content-Type": "multipart/form-data",
     },
   });
@@ -88,5 +88,12 @@ export const createTrips = async (trip) => {
       "Content-Type": "multipart/form-data",
     },
   });
+  return response;
+};
+
+// Create a booking
+export const createBookings = async (id, bookingData) => {
+  const URL = `${baseURL}/bookings/${id}`;
+  const response = await axios.post(URL, bookingData);
   return response;
 };

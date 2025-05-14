@@ -16,9 +16,9 @@ export default function TripReviews({ reviews }) {
     <div className="Reviews">
       <h2 className="review-heading">Reviews</h2>
       <div className="reviews-container">
-        {reviews.map((review) => {
+        {reviews.map((review, i) => {
           return (
-            <div className="review-card">
+            <div className="review-card" key={i}>
               
               <p className="review-rating">{renderStars(review.rating)}</p>
               <p>{review.review}</p>

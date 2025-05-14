@@ -16,9 +16,9 @@ export default function AdminBody({trips}) {
       </div>
       
       <div className="destinations">
-        {trips.map((trip) => {
+        {trips.map((trip, i) => {
           return (
-            <Link to={`/admin-trip-details/${trip._id}`}>
+            <Link to={`/admin-trip-details/${trip._id}`} key={i}>
               <div className="card">
                 <div className="image">
                   <img
