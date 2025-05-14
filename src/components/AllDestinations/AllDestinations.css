@@ -1,9 +1,15 @@
+.all-destinations-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 120px;
+  text-align: center;
+}
+
 .all-destinations-title {
-    text-align: center;
-    padding: 50px;
-    color: #385450;
-    font-weight: bold;
-    font-size: 50px;
+  color: #385450;
+  font-weight: bold;
+  font-size: 50px;
 }
 .all-destinations {
   display: flex;
@@ -23,9 +29,9 @@
 }
 
 .all-destinations-image img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
 
 .all-destinations-image::after {

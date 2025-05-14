@@ -6,7 +6,10 @@ import "./AllDestinations.css"
 export default function AllDestinations({ trips }) {
   return (
     <div>
-      <h1 className="all-destinations-title">Destinations</h1>
+      <div className="all-destinations-header">
+        <h1 className="all-destinations-title">Destinations</h1>
+        <div></div>
+      </div>
       <div className="all-destinations">
         {trips.map((trip) => {
           return (
