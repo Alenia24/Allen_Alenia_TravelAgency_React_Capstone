@@ -41,7 +41,7 @@ export default function NewDestination() {
     <div className="new-destination-trip-container">
       <div className="new-trip">
         <p
-          className="edit-destination-back"
+          className="new-destination-back"
           onClick={() => {
             nav("/admindashboard");
           }}
