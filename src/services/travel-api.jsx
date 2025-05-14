@@ -21,6 +21,45 @@ export const getTrip = async (id) => {
   return response;
 };
 
+// Create a trip
+export const createTrips = async (trip) => {
+  const token = localStorage.getItem("accessToken");
+  const URL = `${baseURL}/trips`;
+  const response = await axios.post(URL, trip, {
+    headers: {
+      authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data",
+    },
+  });
+  return response;
+};
+
+// Update a trip
+export const updateTrip = async (id, tripData) => {
+  const token = localStorage.getItem("accessToken");
+  const URL = `${baseURL}/trips/${id}`;
+  const response = await axios.put(URL, tripData, {
+    headers: {
+      authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data",
+    },
+  });
+  return response;
+};
+
+// Delete a trip
+export const deleteTrips = async (id) => {
+  const token = localStorage.getItem("accessToken");
+  const URL = `${baseURL}/trips/${id}`;
+  const response = await axios.delete(URL, {
+    headers: {
+      authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data",
+    },
+  });
+  return response;
+};
+
 // Get reviews for a trip by id
 export const getTripReviews = async (id) => {
   const URL = `${baseURL}/reviews/${id}`;
@@ -53,45 +92,6 @@ export const postRegister = async (registerData) => {
 export const postLogout = async (logoutData) => {
   const URL = `${baseURL}/auth/logout`;
   const response = await axios.post(URL, logoutData);
-  return response;
-};
-
-// Update a trip
-export const updateTrip = async (id, tripData) => {
-  const token = localStorage.getItem("accessToken");
-  const URL = `${baseURL}/trips/${id}`;
-  const response = await axios.put(URL, tripData, {
-    headers: {
-      authorization: `Bearer ${token}`,
-      "Content-Type": "multipart/form-data",
-    },
-  });
-  return response;
-};
-
-// Delete a trip
-export const deleteTrips = async (id) => {
-  const token = localStorage.getItem("accessToken");
-  const URL = `${baseURL}/trips/${id}`;
-  const response = await axios.delete(URL, {
-    headers: {
-      authorization: `Bearer ${token}`,
-      "Content-Type": "multipart/form-data",
-    },
-  });
-  return response;
-};
-
-// Create a trip
-export const createTrips = async (trip) => {
-  const token = localStorage.getItem("accessToken");
-  const URL = `${baseURL}/trips`;
-  const response = await axios.post(URL, trip, {
-    headers: {
-      authorization: `Bearer ${token}`,
-      "Content-Type": "multipart/form-data",
-    },
-  });
   return response;
 };
 

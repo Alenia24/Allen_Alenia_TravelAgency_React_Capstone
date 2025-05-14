@@ -9,9 +9,11 @@ export default function NewDestination() {
   const [success, setSuccess] = useState(null);
   const nav = useNavigate();
 
+  // Define the handler
   const handleNewTrip = (e) => {
     e.preventDefault();
-
+    
+    //Create the destination to send to the server
     const formData = new FormData();
     formData.append("title", e.target.title.value);
     formData.append("description", e.target.description.value);
@@ -22,6 +24,7 @@ export default function NewDestination() {
     formData.append("type", e.target.type.value);
     formData.append("image", e.target.image.files[0]);
 
+    // Create the destination
     createTrips(formData)
       .then(() => {
         setSuccess("Destination Created Successfully.");
@@ -35,6 +38,7 @@ export default function NewDestination() {
         setSuccess("");
       });
   };
+  
   return (
     <div className="new-destination-trip-container">
       <div className="new-trip">
@@ -78,7 +82,7 @@ export default function NewDestination() {
             <option value="other">Other</option>
           </select>
           <label htmlFor="price">Price</label>
-          <input type="text" name="price" id="price" required />
+          <input type="number" name="price" id="price" min={0} required />
           <label htmlFor="image">Image</label>
           <input type="file" name="image" id="image" required />
           <button className="create-destination-btn" type="submit">

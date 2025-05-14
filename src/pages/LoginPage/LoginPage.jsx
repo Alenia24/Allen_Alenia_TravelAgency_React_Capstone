@@ -23,8 +23,11 @@ export default function LoginPage() {
     // Additional Resource: https://dev.to/miriamfark/display-backend-errors-to-the-frontend-4hoa
     postLogin(loginData)
       .then((res) => {
+        // Store token and user role
         localStorage.setItem("accessToken", res.data.accessToken);
         localStorage.setItem("refreshToken", res.data.refreshToken);
+        localStorage.setItem("role", res.data.role);
+
         const role = res.data.role;
 
         if (role === "admin") {

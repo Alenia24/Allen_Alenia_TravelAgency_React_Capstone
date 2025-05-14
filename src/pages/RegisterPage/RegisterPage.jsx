@@ -1,20 +1,26 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+// Import method functions 
 import { postRegister } from "../../services/travel-api";
 
+// Import Components
 import Navigation from "../../components/Navigation/Navigation";
 import Footer from "../../components/Footer/Footer";
 
+// Import CSS and assets
 import "./RegisterPage.css";
 import logo from "../../../src/assets/logo.png";
 
 export default function RegisterPage() {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-
   const nav = useNavigate();
+
+  // Define the handler
   const createRegister = (e) => {
     e.preventDefault();
+    // Create the user to send to the server
     const registerData = {
       username: e.target.username.value,
       password: e.target.password.value,
@@ -23,6 +29,7 @@ export default function RegisterPage() {
 
     // Used previous lab login from javascript to show the div on success and error
     // Additional Resource: https://dev.to/miriamfark/display-backend-errors-to-the-frontend-4hoa
+    // Create the user
     postRegister(registerData)
       .then(() => {
         setSuccess("Registered Successfully.");
@@ -42,6 +49,7 @@ export default function RegisterPage() {
   const handleNavigation = () => {
     nav("/login");
   };
+  
   return (
     <div>
       <Navigation />

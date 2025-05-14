@@ -1,6 +1,7 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
+//Import method functions and CSS
 import { getTrip, updateTrip } from "../../services/travel-api";
 import "./EditDestination.css"
 
@@ -13,11 +14,13 @@ export default function EditDestination() {
 
   useEffect(() => {
     getTrip(id).then((res) => setTrip(res.data));
-  }, [id]);
+  }, []);
 
+  //Define the handler
   const handleEditTrip = (e) => {
     e.preventDefault();
 
+    // Create the data to send to the server
     const formData = new FormData();
     formData.append("title", e.target.title.value);
     formData.append("description", e.target.description.value);
@@ -32,6 +35,7 @@ export default function EditDestination() {
       formData.append("image", e.target.image.files[0]);
     }
 
+    // Update the trip
     updateTrip(id, formData)
       .then(() => {
         setSuccess("Destination Edited Successfully.");
@@ -45,6 +49,7 @@ export default function EditDestination() {
         setSuccess("");
       });
   };
+
   return (
     <div className="edit-destination-container">
       <div className="edit-destination">
@@ -111,9 +116,10 @@ export default function EditDestination() {
 
             <label htmlFor="price">Price</label>
             <input
-              type="text"
+              type="number"
               name="price"
               defaultValue={trip.price}
+              min={0}
               id="price"
             />
 
