@@ -13,7 +13,7 @@ export default function Navigation() {
   const nav = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.get("accessToken")
+    const token = localStorage.getItem("accessToken")
     setLoggedIn(!!token)
   }, [])
 
@@ -23,7 +23,7 @@ export default function Navigation() {
     setLoggedIn(false)
     nav("/")
   } 
-  
+
   return (
     <div>
       <div className="message">
