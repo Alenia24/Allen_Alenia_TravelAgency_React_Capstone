@@ -1,6 +1,61 @@
-.admin-layout {
-    display: flex;
+.admin-header {
+    display: flex; 
     flex-wrap: wrap;
     justify-content: space-between;
-}
+    padding: 40px 120px;
+    text-align: center;
+ }
+
+ .admin-destinations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .admin-destinations-card {
+    width: 400px;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .admin-destinations-image {
+    position: relative;
+  }
+  
+  .admin-destinations-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .admin-destinations-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition: background 0.3s ease;
+  }
+  
+  .admin-destinations-image:hover::after {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .admin-destinations-image p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+    font-size: 30px;
+    z-index: 2;
+  }
+  
 

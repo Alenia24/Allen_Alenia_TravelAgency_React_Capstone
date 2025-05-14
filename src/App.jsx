@@ -10,9 +10,9 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AdminDashboard from "./pages/AdminDashboard/AdmimDashboard";
 import EditDestination from "./pages/EditDestination/EditDestination";
-import AdminTripDetails from "./components/AdminBody/AdminTripDetails";
 import NewDestination from "./pages/NewDestination/NewDestination";
 import BookingPage from "./pages/BookingPage/BookingPage";
+import AdminTripDetails from "./components/AdminTripDetails/AdminTripDetails";
 
 function App() {
   // Resources https://medium.com/@dennisivy/creating-protected-routes-with-react-router-v6-2c4bbaf7bc1c
@@ -36,7 +36,7 @@ function App() {
           <Route path="/editDestinations/:id" element={<EditDestination />} />
           <Route
             path="/admin-trip-details/:id"
-            element={<AdminTripDetails />}
+            element={<AdminTripDetails/>}
           />
           <Route path="/new-destination" element={<NewDestination />} />
         </Route>
