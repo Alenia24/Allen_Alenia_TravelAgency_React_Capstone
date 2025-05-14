@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { deleteTrips, getTrip, updateTrip } from "../../services/travel-api";
 
+import "./AdminTripDetails.css"
 export default function AdminTripDetails() {
   const [trip, setTrip] = useState({});
   const { id } = useParams();
@@ -20,10 +21,18 @@ export default function AdminTripDetails() {
 
   return (
     <div>
+      <p
+        className="admin-destination-back"
+        onClick={() => {
+          nav("/admindashboard");
+        }}
+      >
+        Back to Dashboard
+      </p>
       {trip && (
-        <div className="trip-container">
+        <div className="admin-destination-details-container">
           <img className="img-fluid" src={trip.imageURL} alt={trip.location} />
-          <div className="trip-details">
+          <div className="admin-destination-details">
             <h1>{trip.title}</h1>
             <p>
               <span>Location:</span> {trip.location}
@@ -44,12 +53,17 @@ export default function AdminTripDetails() {
               <span>Price:</span> ${trip.price}
             </p>
             <button
-              className="book-now-btn"
-              onClick={() => {nav(`/editDestinations/${id}`)}}
+              className="edit-destination-btn"
+              onClick={() => {
+                nav(`/editDestinations/${id}`);
+              }}
             >
               Edit Destination
             </button>
-            <button className="book-now-btn" onClick={deleteDestination}>
+            <button
+              className="edit-destination-btn"
+              onClick={deleteDestination}
+            >
               Delete Destination
             </button>
           </div>

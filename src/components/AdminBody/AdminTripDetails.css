@@ -1,0 +1,41 @@
+.admin-destination-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+  margin: 60px 30px;
+}
+
+.admin-destination-back {
+  color: #385450;
+  font-weight: bold;
+  text-align: left;
+  margin: 60px;
+  cursor: pointer;
+}
+
+.admin-destination-back:hover {
+  color: orange;
+}
+
+.admin-destination-details-container img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.admin-destination-details {
+  text-transform: capitalize;
+}
+
+.admin-destination-details h1 {
+  margin-bottom: 30px;
+}
+
+.admin-destination-details span {
+  color: #385450;
+  font-weight: bold;
+}
+
+.admin-destination-details button {
+  margin: 20px 10px;
+}
