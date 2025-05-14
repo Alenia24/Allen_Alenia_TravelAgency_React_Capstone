@@ -1,11 +1,20 @@
 import React from 'react'
 import AllDestinations from "../../components/AllDestinations/AllDestinations";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import "./AdminBody.css"
 
 export default function AdminBody({trips}) {
+  const nav = useNavigate();
   return (
     <div>
-      <h1 className="title">Admin Dashoard</h1>
+      <div className='admin-header'>
+        <h1 className="admin -title">Admin Dashoard</h1>
+        <button onClick={() => {
+          nav("/new-destination")
+        }} className='book-now-btn'>Create Destination</button>
+      </div>
+      
       <div className="destinations">
         {trips.map((trip) => {
           return (

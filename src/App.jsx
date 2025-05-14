@@ -11,10 +11,12 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AdminDashboard from "./pages/AdminDashboard/AdmimDashboard";
 import EditDestination from "./pages/EditDestination/EditDestination";
 import AdminTripDetails from "./components/AdminBody/AdminTripDetails";
+import NewDestination from "./pages/NewDestination/NewDestination";
 
 function App() {
+  // Resources https://medium.com/@dennisivy/creating-protected-routes-with-react-router-v6-2c4bbaf7bc1c
   const PrivateRoutes = () => {
-    const token = localStorage.getItem("accessToken")
+    const token = localStorage.getItem("accessToken");
     return token ? <Outlet /> : <Navigate to="/login" />;
   };
 
@@ -33,6 +35,10 @@ function App() {
           <Route
             path="/admin-trip-details/:id"
             element={<AdminTripDetails />}
+          />
+          <Route
+            path="/new-destination"
+            element={<NewDestination />}
           />
         </Route>
 
