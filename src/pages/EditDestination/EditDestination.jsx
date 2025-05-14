@@ -2,10 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getTrip, updateTrip } from "../../services/travel-api";
-import AdminTripDetails from "../../components/AdminBody/AdminTripDetails";
+import "./EditDestination.css"
 
 export default function EditDestination() {
   const [trip, setTrip] = useState(null);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
   const { id } = useParams();
   const nav = useNavigate();
 
@@ -30,14 +32,25 @@ export default function EditDestination() {
       formData.append("image", e.target.image.files[0]);
     }
 
-    updateTrip(id, formData).then(() => {
-      nav(`/admin-trip-details/${id}`);
-    });
+    updateTrip(id, formData)
+      .then(() => {
+        setSuccess("Destination Edited Successfully.");
+        setError("");
+        setTimeout(() => {
+          nav(`/admindashboard`);
+        }, 1000);
+      })
+      .catch((error) => {
+        setError(error.response.data.message);
+        setSuccess("");
+      });
   };
   return (
-    <div>
-      <AdminTripDetails trip={trip} />
-      <div className="trip-container">
+    <div className="edit-destination-container">
+      <div className="edit-destination">
+        <h1 className="edit-destination-title">Edit Destination</h1>
+        {error && <div className="message-error-container">{error}</div>}
+        {success && <div className="message-success-container">{success}</div>}
         {trip && (
           <form onSubmit={handleEditTrip}>
             <label htmlFor="title">Title</label>
@@ -98,7 +111,7 @@ export default function EditDestination() {
             <label htmlFor="image">Image</label>
             <input type="file" name="image" id="image" />
 
-            <button type="submit">Submit</button>
+            <button className="edit-destination-btn" type="submit">Edit Destination</button>
           </form>
         )}
       </div>

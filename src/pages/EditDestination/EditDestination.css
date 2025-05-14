@@ -1,0 +1,66 @@
+.edit-destination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.edit-destination {
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 8px;
+  padding: 20px 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 40px #3854503d;
+}
+
+.edit-destination-title {
+  margin: 40px 0;
+}
+
+.edit-destination-container form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-destination-container label {
+  font-weight: bold;
+  font-weight: bold;
+  font-size: 17px;
+  color: #385450;
+  align-self: flex-start;
+  padding-left: 120px;
+  margin: 10px 0 5px 0;
+}
+
+.edit-destination-container input, .edit-destination-container select {
+    width: 60%;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid rgb(207, 207, 207);
+  padding: 10px;
+}
+
+.edit-destination-container input[type="file"] {
+    border: none;
+}
+
+.edit-destination-btn {
+    margin: 30px 0 40px 0;
+  border: 1px solid #385450;
+  border-radius: 6px;
+  padding: 10px 30px;
+  background-color: #385450;
+  color: white;
+  transition: 200ms all ease-in-out;
+}
+
+.edit-destination-btn:hover {
+  border: 1px solid #385450;
+  opacity: 0.8;
+} 
