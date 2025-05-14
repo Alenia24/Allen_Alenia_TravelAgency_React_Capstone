@@ -48,6 +48,14 @@ export default function EditDestination() {
   return (
     <div className="edit-destination-container">
       <div className="edit-destination">
+        <p
+          className="edit-destination-back"
+          onClick={() => {
+            nav("/admindashboard");
+          }}
+        >
+          Back to Dashboard
+        </p>
         <h1 className="edit-destination-title">Edit Destination</h1>
         {error && <div className="message-error-container">{error}</div>}
         {success && <div className="message-success-container">{success}</div>}
@@ -111,7 +119,9 @@ export default function EditDestination() {
             <label htmlFor="image">Image</label>
             <input type="file" name="image" id="image" />
 
-            <button className="edit-destination-btn" type="submit">Edit Destination</button>
+            <button className="edit-destination-btn" type="submit">
+              Edit Destination
+            </button>
           </form>
         )}
       </div>

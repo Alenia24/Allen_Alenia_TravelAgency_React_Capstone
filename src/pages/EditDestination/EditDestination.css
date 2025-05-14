@@ -5,6 +5,18 @@
   margin: 30px;
 }
 
+.edit-destination-back {
+  color: #385450;
+  font-weight: bold;
+  text-align: left;
+  margin: 30px;
+  cursor: pointer;
+}
+
+.edit-destination-back:hover {
+  color:  orange;
+}
+
 .edit-destination {
   border: 1px solid rgb(207, 207, 207);
   border-radius: 8px;

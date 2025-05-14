@@ -40,6 +40,14 @@ export default function NewDestination() {
   return (
     <div className="new-destination-trip-container">
       <div className="new-trip">
+        <p
+          className="edit-destination-back"
+          onClick={() => {
+            nav("/admindashboard");
+          }}
+        >
+          Back to Dashboard
+        </p>
         <h1 className="new-destination-title">Create New Destination</h1>
         {error && <div className="message-error-container">{error}</div>}
         {success && <div className="message-success-container">{success}</div>}
@@ -63,7 +71,9 @@ export default function NewDestination() {
             <option value="romantic">Romantic</option>
             <option value="beach">Beach</option>
             <option value="island">Island</option>
-            <option value="other" selected>Other</option>
+            <option value="other" selected>
+              Other
+            </option>
           </select>
 
           <label htmlFor="price">Price</label>

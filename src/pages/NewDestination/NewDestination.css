@@ -5,6 +5,18 @@
   margin: 30px;
 }
 
+.new-destination-back {
+  color: #385450;
+  font-weight: bold;
+  text-align: left;
+  margin: 30px;
+  cursor: pointer;
+}
+
+.new-destination-back:hover {
+  color:  orange;
+}
+
 .new-trip {
   border: 1px solid rgb(207, 207, 207);
   border-radius: 8px;
