@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { postLogin} from "../../services/travel-api";
+import { postLogin, postRegister } from "../../services/travel-api";
 
 import "./Login.css";
 import logo from "../../../src/assets/logo.png";
 
-export default function Login() {
+export default function Register() {
   const [error, setError] = useState(null);
-  const [user, setUser] = useState(null)
 
   const nav = useNavigate();
   const createLogin = (e) => {
@@ -23,11 +22,9 @@ export default function Login() {
     // Additional Resource: https://dev.to/miriamfark/display-backend-errors-to-the-frontend-4hoa
     postLogin(loginData)
       .then((res) => {
-        const {accessToken, refreshToken, role} = res.data;
-        localStorage.setItem("accessToken", accessToken)
-        localStorage.setItem("refreshToken", refreshToken);
-        
-        setUser({ accessToken, refreshToken, role })
+        localStorage.setItem("accessToken", res.data.accessToken)
+        localStorage.setItem("refreshToken", res.data.refreshToken);
+        const role = res.data.role
         
         if (role === "admin") {
           nav("/admindashboard");

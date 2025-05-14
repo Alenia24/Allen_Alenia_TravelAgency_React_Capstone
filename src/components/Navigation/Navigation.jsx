@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navigation.css";
 
@@ -9,21 +9,14 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 export default function Navigation() {
-  const [loggedIn, setLoggedIn] = useState(false)
+  const loggedIn = !!localStorage.getItem("accessToken")
   const nav = useNavigate();
-
-  useEffect(() => {
-    const token = localStorage.getItem("accessToken")
-    setLoggedIn(!!token)
-  }, [])
 
   const handleLogout = () => {
     localStorage.removeItem("accessToken")
     localStorage.removeItem("refreshToken")
-    setLoggedIn(false)
     nav("/")
   } 
-
   return (
     <div>
       <div className="message">
