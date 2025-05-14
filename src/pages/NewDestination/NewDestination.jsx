@@ -24,17 +24,15 @@ export default function NewDestination() {
 
     createTrips(formData)
       .then(() => {
-        
-        setSuccess("Destination Created Successfully.")
-        setError("")
+        setSuccess("Destination Created Successfully.");
+        setError("");
         setTimeout(() => {
-           nav(`/admindashboard`); 
-        }, 1000)
-        
+          nav(`/admindashboard`);
+        }, 1000);
       })
       .catch((error) => {
         setError(error.response.data.message);
-        setSuccess("")
+        setSuccess("");
       });
   };
   return (
@@ -59,29 +57,30 @@ export default function NewDestination() {
           <label htmlFor="location">Location</label>
           <input type="text" name="location" id="location" required />
           <label htmlFor="date">Date</label>
-          <input type="date" name="date" id="date" required />
+
+          <input
+            type="date"
+            name="date"
+            id="date"
+            min={new Date().toISOString().split("T")[0]}
+            required
+          />
           <label htmlFor="duration">Duration</label>
           <input type="number" name="duration" id="duration" required />
-
           <label htmlFor="type">Type</label>
-          <select name="type"  defaultValue="other" id="type">
+          <select name="type" defaultValue="other" id="type">
             <option value="adventure">Adventure</option>
             <option value="cultural">Cultural</option>
             <option value="family">Family</option>
             <option value="romantic">Romantic</option>
             <option value="beach">Beach</option>
             <option value="island">Island</option>
-            <option value="other">
-              Other
-            </option>
+            <option value="other">Other</option>
           </select>
-
           <label htmlFor="price">Price</label>
           <input type="text" name="price" id="price" required />
-
           <label htmlFor="image">Image</label>
           <input type="file" name="image" id="image" required />
-
           <button className="create-destination-btn" type="submit">
             Create Destination
           </button>

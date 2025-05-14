@@ -86,6 +86,7 @@ export default function EditDestination() {
             <input
               type="date"
               name="date"
+              min={new Date().toISOString().split("T")[0]}
               defaultValue={new Date(trip.date).toISOString().split("T")[0]}
               id="date"
             />
