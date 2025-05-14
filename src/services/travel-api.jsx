@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:3001";
+// Dev mode
+// const baseURL = "http://localhost:3001"; 
+
+//Production mode 
+const baseURL = "https://solaraescapebackend.onrender.com";
 
 // Show all Trips
 export const getTrips = async () => {
