@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { postLogin, postRegister } from "../../services/travel-api";
 
 import "./Login.css";
+import logo from "../../../src/assets/logo.png";
 
 export default function Register() {
   const [error, setError] = useState(null);
@@ -45,7 +46,7 @@ export default function Register() {
       <div className="login">
         <img
           className="img-fluid"
-          src="../../src/assets/logo.png"
+          src={logo}
           alt="solara escapes logo"
           width={100}
         />
