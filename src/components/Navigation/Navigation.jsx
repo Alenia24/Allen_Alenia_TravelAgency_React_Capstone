@@ -2,6 +2,8 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navigation.css";
 
+import logo from "../../../src/assets/logo.png";
+
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -28,7 +30,7 @@ export default function Navigation() {
         <Container fluid className="mx-3 p-0">
           <Nav.Link as={Link} to={"/"}>
             <img
-              src="../../src/assets/logo.png"
+              src={logo}
               alt=""
               width={100}
               height={50}
