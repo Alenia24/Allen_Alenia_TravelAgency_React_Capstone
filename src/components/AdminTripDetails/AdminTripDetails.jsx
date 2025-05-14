@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { deleteTrips, getTrip, updateTrip } from "../../services/travel-api";
 
+//Import method functions and CSS
+import { deleteTrips, getTrip } from "../../services/travel-api";
 import "./AdminTripDetails.css"
+
 export default function AdminTripDetails() {
   const [trip, setTrip] = useState({});
   const { id } = useParams();

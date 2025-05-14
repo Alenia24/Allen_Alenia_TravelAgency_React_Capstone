@@ -1,7 +1,6 @@
-import React from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 
 import "./TripDetails.css"
-import { useNavigate, useParams } from 'react-router-dom';
 
 export default function TripDetails({trip}) {
   const nav = useNavigate();
