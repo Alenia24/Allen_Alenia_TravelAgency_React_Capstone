@@ -2,9 +2,6 @@
    display: flex; 
    flex-wrap: wrap;
    justify-content: space-between;
-   padding: 40px;
-}
-
-.admin-header {
-    margin-left: auto ;
+   padding: 40px 120px;
+   text-align: center;
 }

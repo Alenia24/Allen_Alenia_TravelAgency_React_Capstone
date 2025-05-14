@@ -9,7 +9,7 @@ export default function AdminBody({trips}) {
   return (
     <div>
       <div className='admin-header'>
-        <h1 className="admin -title">Admin Dashoard</h1>
+        <h1 className="admin-title">Admin Dashboard</h1>
         <button onClick={() => {
           nav("/new-destination")
         }} className='book-now-btn'>Create Destination</button>
