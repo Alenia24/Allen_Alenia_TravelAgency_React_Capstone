@@ -46,6 +46,9 @@ export default function Navigation() {
               <Nav.Link as={Link} to={"/about-us"}>
                 About Us
               </Nav.Link>
+              <Nav.Link as={Link} to={"/admindashboard"}>
+                Admin Dashboard
+              </Nav.Link>
               {/* // Toggle between login and logout  */}
               {loggedIn ? (
                 <Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
