@@ -15,6 +15,7 @@ import EditDestination from "./pages/EditDestination/EditDestination";
 import NewDestination from "./pages/NewDestination/NewDestination";
 import BookingPage from "./pages/BookingPage/BookingPage";
 import AdminTripDetails from "./components/AdminTripDetails/AdminTripDetails";
+import RestrictedPage from "./pages/RestrictedPage/RestrictedPage";
 
 function App() {
   // Resources https://medium.com/@dennisivy/creating-protected-routes-with-react-router-v6-2c4bbaf7bc1c
@@ -26,7 +27,7 @@ function App() {
     const role = localStorage.getItem("role");
 
     // If no token send to the login page should change to unauthorized
-    if (!token) return <Navigate to="/login" />;
+    if (!token) return <Navigate to="/restricted" />;
 
     // If the user role is not the required role 
     if (role !== requiredRole) {
@@ -45,7 +46,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/booking/:id" element={<BookingPage />} />
-
+        <Route path="/restricted" element={<RestrictedPage />} />
+        {/* //Admin routes */}
         <Route element={<PrivateRoutes requiredRole="admin" />}>
           <Route path="/admindashboard" element={<AdminDashboard />} />
           <Route path="/editDestinations/:id" element={<EditDestination />} />

@@ -1,0 +1,29 @@
+.restricted-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 80px;
+}
+
+.title {
+    font-size: 120px;
+    font-weight: bold;
+}
+
+.home-btn {
+  margin: 30px 0 40px 0;
+  border: 1px solid #385450;
+  border-radius: 6px;
+  padding: 10px 30px;
+  background-color: #385450;
+  color: white;
+  transition: 200ms all ease-in-out;
+}
+
+.home-btn:hover {
+  border: 1px solid #385450;
+  background-color: white;
+  color: #385450;
+}
