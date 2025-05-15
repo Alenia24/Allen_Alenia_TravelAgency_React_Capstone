@@ -84,3 +84,6 @@ You can view [solara's escape frontend](https://github.com/Alenia24/Allen_Alenia
 Before developing this application I had no prior experience with authentication. The process of verification and managing access was overwhelming. I read documentations, and watched countless youtube videos. I was able to have an understanding about the step by step process as to how authentication works.
 I learned that:
 - bcrypt is used to hash passwords so they are not stored directly in the database as plain text.
+
+# Planning 
+[Google Docs](https://docs.google.com/document/d/1I8a85ssg-QtsPQcI9IbdvO7btaI4nObDcGcTDawk24w/edit?tab=t.0)
