@@ -8,6 +8,7 @@ A full stack travel agency web application, that allows users to browse and book
 - Mongoose
 - MongoDB
 - Bcrypt
+- JWT
 - Multer
 - Cloudinary
 
