@@ -25,23 +25,26 @@ export default function Navigation() {
       <div className="message">
         <p>
           Curated Journeys to the World's Most Captivating Destination. Travel
-          Beyond Expectation. <span>Book Now</span>
+          Beyond Expectation.{" "}
+          <Link to={"/destinations"}>
+            <span>Book Now</span>
+          </Link>
         </p>
       </div>
 
       <Navbar expand="lg" className="bg-body-tertiary">
-        <Container fluid className="mx-3 p-0">
+        <Container fluid className="m-0 px-4">
           <Nav.Link as={Link} to={"/"}>
-            <img src={logo} alt="" width={100} height={50} />
+            <img className="nav-img" src={logo} alt="" width={100} height={50} />
           </Nav.Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
+              <Nav.Link as={Link} to={"/"}>
+                Home
+              </Nav.Link>
               <Nav.Link as={Link} to={"/destinations"}>
                 Destinations
-              </Nav.Link>
-              <Nav.Link as={Link} to={"/vacation-types"}>
-                Vacation Types
               </Nav.Link>
               <Nav.Link as={Link} to={"/about-us"}>
                 About Us

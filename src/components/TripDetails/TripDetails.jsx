@@ -19,7 +19,11 @@ export default function TripDetails({trip}) {
             <span>Description:</span> {trip.description}
           </p>
           <p>
-            <span>Date:</span> {trip.date}
+            <span>Date:</span> {new Date(trip.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric"
+            })}
           </p>
           <p>
             <span>Duration:</span> {trip.duration} Days

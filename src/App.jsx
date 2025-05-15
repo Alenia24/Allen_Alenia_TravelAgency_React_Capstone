@@ -16,6 +16,7 @@ import NewDestination from "./pages/NewDestination/NewDestination";
 import BookingPage from "./pages/BookingPage/BookingPage";
 import AdminTripDetails from "./components/AdminTripDetails/AdminTripDetails";
 import RestrictedPage from "./pages/RestrictedPage/RestrictedPage";
+import AboutUs from "./pages/AboutUs/AboutUs";
 
 function App() {
   // Resources https://medium.com/@dennisivy/creating-protected-routes-with-react-router-v6-2c4bbaf7bc1c
@@ -42,11 +43,12 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/destinations" element={<Destination />} />
-        <Route path="/destinations/:id" element={<DestinationItem />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/booking/:id" element={<BookingPage />} />
         <Route path="/restricted" element={<RestrictedPage />} />
+        <Route path="/booking/:id" element={<BookingPage />} />
+        <Route path="/destinations/:id" element={<DestinationItem />} />
         {/* //Admin routes */}
         <Route element={<PrivateRoutes requiredRole="admin" />}>
           <Route path="/admindashboard" element={<AdminDashboard />} />

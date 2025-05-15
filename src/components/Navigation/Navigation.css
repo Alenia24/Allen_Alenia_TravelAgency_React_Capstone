@@ -11,6 +11,11 @@
     margin: 0;
 }
 
-.message span {
+.message a {
     font-weight: bold;
+    color: white;
+}
+
+.message a:hover {
+    color: #64968e;
 }

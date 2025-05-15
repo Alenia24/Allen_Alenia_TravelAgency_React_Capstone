@@ -1,0 +1,28 @@
+.about-us-container {
+    padding: 20px 30px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 0 auto;
+}
+
+.about-us-container h1 {
+    font-weight: bold;
+    color: #385450;
+}
+
+.about-us-container div {
+    margin: 40px 0;
+}
+
+.about-us-container span {
+    font-weight: bold;
+    color: #385450;
+}
+
+.about-us-container h5 {
+    font-size: 25px;
+    color: #385450;
+    padding-bottom: 10px;
+}
