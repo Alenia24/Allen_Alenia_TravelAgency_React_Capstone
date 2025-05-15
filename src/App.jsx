@@ -27,11 +27,11 @@ function App() {
     const role = localStorage.getItem("role");
 
     // If no token send to the login page should change to unauthorized
-    if (!token) return <Navigate to="/restricted" />;
+    if (!token) return <Navigate to="/login" />;
 
     // If the user role is not the required role 
     if (role !== requiredRole) {
-      return <Navigate to="/login" />;
+      return <Navigate to="/restricted" />;
     }
 
     return <Outlet/>
